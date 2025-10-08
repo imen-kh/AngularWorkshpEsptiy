@@ -8,7 +8,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { HomeComponent } from './layout/home/home.component';
-import { ListEventComponent } from './layout/list-event/list-event.component';
+import { ListEventComponent } from './features/events/list-event/list-event.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ListEventComponent } from './layout/list-event/list-event.component';
     ListEventComponent,
     FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

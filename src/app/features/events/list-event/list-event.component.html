@@ -3,11 +3,13 @@
 
     <!-- Recherche -->
     <input type="text" class="form-control mb-4"
-           placeholder="Rechercher un événement">
+           placeholder="Rechercher un événement"
+           [(ngModel)]="searcheItem">
+
 
     <div class="row g-3">
         <!-- Boucle sur les événements -->
-        <div class="col-md-4" *ngFor="let event of evenList">
+        <div class="col-md-4" *ngFor="let event of filter()">
             <div class="card h-100 shadow-sm">
                 <!-- Image de l'événement -->
                 <img src="{{ event.imageUrl }}" 
@@ -23,10 +25,17 @@
                     <p>{{ event.lieu }}</p>
 
                     <!-- Bouton Like -->
-                    <button class="btn btn-sm btn-primary">
+                    <button class="btn btn-sm btn-primary" (click)="incLikes(event)">
                         👍 Like
                     </button>
+
                     <span class="ms-2">{{ event.nbrLikes }}</span>
+                   <span class="ms-2">{{ event.nbPlaces }}</span>
+
+
+                     <button class="btn btn-sm btn-primary" (click)="buy(event)" [disabled]="event.nbPlaces==0">
+                        buy ticket 
+                    </button>
                 </div>
             </div>
         </div>
