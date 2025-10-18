@@ -36,6 +36,9 @@
                      <button class="btn btn-sm btn-primary" (click)="buy(event)" [disabled]="event.nbPlaces==0">
                         buy ticket 
                     </button>
+                    <button class="btn btn-sm btn-info ms-2" [routerLink]="['./', event.id]">
+                        View Details
+                    </button>
                 </div>
             </div>
         </div>

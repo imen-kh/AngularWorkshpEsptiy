@@ -10,6 +10,7 @@ import { NotFoundComponent } from './layout/not-found/not-found.component';
 import { HomeComponent } from './layout/home/home.component';
 import { ListEventComponent } from './features/events/list-event/list-event.component';
 import { FormsModule } from '@angular/forms';
+import { DetailEventComponent } from './features/events/detail-event/detail-event.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ListEventComponent,
     FooterComponent,
+    DetailEventComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

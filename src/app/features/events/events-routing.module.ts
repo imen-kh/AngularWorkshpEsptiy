@@ -3,8 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events.component';
 import { ListEventComponent } from './list-event/list-event.component';
 
-const routes: Routes = [{ path: '', component: EventsComponent },
-  { path: 'Listevents', component: ListEventComponent },
+
+const routes: Routes = [
+  // children nestaamlou wa9tli n7ebou na3mlou navigation dakhel component mo3ayan
+  // route listevent ki naayet l path events yaffichi listevent dakhel eventscomponent
+  { path: '', component: EventsComponent , 
+    children:[
+  { path: '', component: ListEventComponent },
+  ]},
+  { path: 'tests', loadChildren: () => import('./test/test.module').then(m => m.TestModule) },
 
 ];
 

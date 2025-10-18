@@ -1,0 +1,14 @@
+<p>detail-event works!</p>
+{{evenetDetails.id}}
+<h2>{{evenetDetails.titre}}</h2>
+<p>{{evenetDetails.description}}</p>
+<p>{{evenetDetails.date | date:'shortDate'}}</p>
+<p>{{evenetDetails.lieu}}</p>
+<p>{{evenetDetails.prix}} DT</p>
+<p>Nombre de places restantes: {{evenetDetails.nbPlaces}}</p>
+<p>Nombre de likes: {{evenetDetails.nbrLikes}}</p>
+<img src="{{ evenetDetails.imageUrl }}" 
+     class="img-fluid"
+     style="height: 400px; object-fit: cover;" 
+     alt="{{ evenetDetails.titre }}">
+     
