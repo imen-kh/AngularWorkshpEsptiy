@@ -1,0 +1,36 @@
+<p>card works!</p>
+ <div class="row g-3">
+        <!-- Boucle sur les événements -->
+            <div class="card h-100 shadow-sm">
+                <!-- Image de l'événement -->
+                <img src="{{ item.imageUrl }}" 
+                     class="card-img-top img-fluid"
+                     style="height: 200px; object-fit: cover;" 
+                     alt="{{ item.titre }}">
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.titre  | uppercase}}</h5>
+                    <p class="text-muted">{{ item.date | date:'shortDate' | date}}</p>
+                    <p>{{ item.description }}</p>
+                    <p class="fw-bold">{{ item.prix }} DT</p>
+                    <p>{{ item.lieu }}</p>
+
+                    <!-- Bouton Like -->
+                    <button class="btn btn-sm btn-primary" (click)="likeEvent(item)">
+                        👍 Like
+                    </button>
+
+                    <span class="ms-2">{{ item.nbrLikes }}</span>
+                   <span class="ms-2">{{ item.nbPlaces }}</span>
+
+
+                     <button class="btn btn-sm btn-primary" (click)="buyEvent(item)" [disabled]="item.nbPlaces==0">
+                        buy ticket 
+                    </button>
+                    <button class="btn btn-sm btn-info ms-2" [routerLink]="['./detail', item.id]">
+                        View Details
+                    </button>
+                </div>
+            </div>
+        </div>
+    
