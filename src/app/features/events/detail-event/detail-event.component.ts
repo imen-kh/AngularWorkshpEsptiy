@@ -11,14 +11,14 @@ import { Event } from '../../../models/event.model';
 })
 export class DetailEventComponent {
 
-  evenetDetails!: Event;
+  eventDetails!: Event;
   id!: number;
   constructor(private ActRoute : ActivatedRoute, private data: DataService) { }
 
   ngOnInit(){
     console.log(this.ActRoute,);
     this.id = this.ActRoute.snapshot.params['id'];
-    this.evenetDetails=this.data.getEventById(this.id);
+    this.eventDetails=this.data.getEventById(this.id);
 
 }
 
