@@ -2,7 +2,14 @@
 <form #form="ngForm">
     <label for="email">Email</label>
     <input type="text" name="email" ngModel #emailCtrl="ngModel" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+    <div *ngIf="emailCtrl.touched && emailCtrl.invalid">
+        <span *ngIf="emailCtrl.hasError('required')"> this field is required</span>
+        <span *ngIf="emailCtrl.hasError('pattern')"> respecter the pattern</span>
+
+    </div>
     <label for="nbPlaces">Nombre de places</label>
     <input type="text" name="nbPlaces" ngModel #nbPlaceCntrl="ngModel" min="1" required>
+    <span *ngIf="nbPlaceCntrl.hasError('required')"> this field is required</span>
+        <span *ngIf="nbPlaceCntrl.hasError('min')"> respecter the pattern</span>
     <button [disabled]="form.invalid">save</button>
 </form>
