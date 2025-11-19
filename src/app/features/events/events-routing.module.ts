@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventsComponent } from './events.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { DetailEventComponent } from './detail-event/detail-event.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { ParticipationFormComponent } from './participation-form/participation-form.component';
 
 
 const routes: Routes = [
@@ -12,9 +14,11 @@ const routes: Routes = [
     component: EventsComponent , 
     children:[
   { path: '', component: ListEventComponent },
+  {path:'add', component: AddEventComponent},
   {path:'detail/:id', component:DetailEventComponent}
   ]},
   { path: 'tests', loadChildren: () => import('./test/test.module').then(m => m.TestModule) },
+  { path : 'participate/:id/:prix', component: ParticipationFormComponent}
 
 ];
 

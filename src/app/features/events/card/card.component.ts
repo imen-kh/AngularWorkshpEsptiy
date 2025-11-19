@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Input } from '@angular/core';
 import { Event } from '../../../models/event.model';
+import { Router } from '@angular/router';
 
 
 
@@ -11,6 +12,8 @@ import { Event } from '../../../models/event.model';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
+
+  constructor(private route:Router){}
   // include Input decorator to receive event data from parent component
   @Input() item! : Event;
   @Output() notifLikeParent:EventEmitter<Event> = new EventEmitter<Event>();
@@ -20,6 +23,11 @@ export class CardComponent {
     this.notifLikeParent.emit(item);}
  buyEvent(item:Event){
     this.notifBuyParent.emit(item);}
+
+
+    participate(id:number , prix:number){
+      this.route.navigate(['/events/participate',id, prix])
+    }
 
 
 }

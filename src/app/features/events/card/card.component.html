@@ -30,6 +30,11 @@
                     <button class="btn btn-sm btn-info ms-2" [routerLink]="['./detail', item.id]">
                         View Details
                     </button>
+
+
+                     <button class="btn btn-sm btn-info ms-2" (click)="participate(item.id, item.prix)">
+                       Participation
+                    </button>
                 </div>
             </div>
         </div>

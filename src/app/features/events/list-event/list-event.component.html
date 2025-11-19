@@ -6,6 +6,11 @@
            placeholder="Rechercher un événement"
            [(ngModel)]="searcheItem">
 
+
+          <button type="button" class="btn btn-primary" routerLink="./add">
+    Add new event
+  </button>
+
     <div class="row g-3">
         <!-- Boucle sur les événements -->
         <div class="col-md-4" *ngFor="let event of filter()">

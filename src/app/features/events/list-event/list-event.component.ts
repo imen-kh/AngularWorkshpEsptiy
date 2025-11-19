@@ -9,8 +9,14 @@ import { Event } from '../../../models/event.model';
 })
 export class ListEventComponent {
   searcheItem = '';
+    eventList: Event[] = [];
+  filteredList: Event[] = [];
+  constructor(private data: DataService) {}
 
-  constructor (private data : DataService) {}
+  ngOnInit() {
+    this.eventList = this.data.getEventList();
+    this.filteredList = this.eventList;
+  }
 
   incLikes(event: Event) {
     event.nbrLikes++;
@@ -21,12 +27,14 @@ export class ListEventComponent {
   }
 
   filter() {
-    return this.data.getEventList().filter(
-      (eventItem) =>
-        eventItem.titre
-          .toLowerCase()
-          .includes(this.searcheItem.toLowerCase()) ||
-        eventItem.lieu.toLowerCase().includes(this.searcheItem.toLowerCase())
-    );
+    console.log(this.filteredList);
+    return this.filteredList;
+    //return this.data.getEventList().filter(
+     // (eventItem) =>
+    //    eventItem.titre
+       //   .toLowerCase()
+      //    .includes(this.searcheItem.toLowerCase()) ||
+     //   eventItem.lieu.toLowerCase().includes(this.searcheItem.toLowerCase())
+    //);
   }
 }

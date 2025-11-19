@@ -68,4 +68,7 @@ export class DataService {
   getEventById(id: number){
     return this.evenList.filter(event=> event.id === id)[0];
   }
+  addEvent(event:any){
+    return this.evenList.push(event);
+  }
 }

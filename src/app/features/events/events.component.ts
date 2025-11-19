@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class EventsComponent {
 
+  name:String=""; 
+  sayHello(event : any){
+    this.name=event.target.value;
+  }
 }

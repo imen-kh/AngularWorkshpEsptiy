@@ -1,0 +1,8 @@
+<h3>partication-form</h3>
+<form #form="ngForm">
+    <label for="email">Email</label>
+    <input type="text" name="email" ngModel #emailCtrl="ngModel" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+">
+    <label for="nbPlaces">Nombre de places</label>
+    <input type="text" name="nbPlaces" ngModel #nbPlaceCntrl="ngModel" min="1" required>
+    <button [disabled]="form.invalid">save</button>
+</form>

@@ -5,8 +5,10 @@ import { EventsRoutingModule } from './events-routing.module';
 import { EventsComponent } from './events.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { DetailEventComponent } from './detail-event/detail-event.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { ParticipationFormComponent } from './participation-form/participation-form.component';
 
 
 @NgModule({
@@ -14,12 +16,15 @@ import { CardComponent } from './card/card.component';
     EventsComponent,
     ListEventComponent,
     DetailEventComponent,
-    CardComponent
+    CardComponent,
+    AddEventComponent,
+    ParticipationFormComponent
   ],
   imports: [
     CommonModule,
     EventsRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })
